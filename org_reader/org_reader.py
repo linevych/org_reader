@@ -92,16 +92,20 @@ class OrgReader(readers.BaseReader):
         # get default slug from .org filename
         default_slug, _ = os.path.splitext(os.path.basename(filename))
 
-        metadata = {'title': json_output['title'] or '',
-                    'date': json_output['date'] or '',
-                    'author': json_output['author'] or '',
-                    'lang': json_output['language'] or '',
-                    'category': json_output['category'] or '',
-                    'slug': json_output['slug'] or default_slug,
-                    'modified': json_output['modified'] or '',
-                    'tags': json_output['tags'] or '',
-                    'save_as': json_output['save_as'] or '',
-                    'summary': json_output['summary'] or ''}
+        metadata = {
+            'title': json_output['title'] or '',
+            'date': json_output['date'] or '',
+            'author': json_output['author'] or '',
+            'lang': json_output['language'] or '',
+            'category': json_output['category'] or '',
+            'slug': json_output['slug'] or default_slug,
+            'modified': json_output['modified'] or '',
+            'tags': json_output['tags'] or '',
+            'save_as': json_output['save_as'] or '',
+            'summary': json_output['summary'] or '',
+            'image': json_output['image'] or '',
+            'featured_image': json_output['featured_image'] or '',
+        }
 
         # remove empty strings when necessary
         for key in ['save_as', 'modified', 'lang', 'summary']:
