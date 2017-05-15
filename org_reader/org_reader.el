@@ -49,7 +49,7 @@
                  :summary (cdr (assoc-string "SUMMARY" org-file-properties t))
                  :slug (cdr (assoc-string "SLUG" org-file-properties t))
                  :image (cdr (assoc-string "IMAGE" org-file-properties t))
-                 :featured-image (cdr (assoc-string "FEATURED-IMAGE" org-file-properties t))
+                 :featured_image (cdr (assoc-string "FEATURED_IMAGE" org-file-properties t))
 
                  :modified (if (stringp modifiedstr)
                                (org-read-date nil nil modifiedstr nil)
